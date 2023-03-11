@@ -1,0 +1,2 @@
+Ver todos os templates disponíveis a partir da CLI
+dotnet new -l
