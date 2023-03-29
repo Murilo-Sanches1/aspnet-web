@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Programação\\CS\\ultimate\\ultimate.csproj": {}
+    "C:\\programming\\CS\\ultimate\\ultimate.csproj": {}
   },
   "projects": {
-    "C:\\Programação\\CS\\ultimate\\ultimate.csproj": {
+    "C:\\programming\\CS\\ultimate\\ultimate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Programação\\CS\\ultimate\\ultimate.csproj",
+        "projectUniqueName": "C:\\programming\\CS\\ultimate\\ultimate.csproj",
         "projectName": "ultimate",
-        "projectPath": "C:\\Programação\\CS\\ultimate\\ultimate.csproj",
+        "projectPath": "C:\\programming\\CS\\ultimate\\ultimate.csproj",
         "packagesPath": "C:\\Users\\sanch\\.nuget\\packages\\",
-        "outputPath": "C:\\Programação\\CS\\ultimate\\obj\\",
+        "outputPath": "C:\\programming\\CS\\ultimate\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sanch\\AppData\\Roaming\\NuGet\\NuGet.Config",

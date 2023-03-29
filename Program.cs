@@ -1,4 +1,5 @@
 using Middlewares;
+using Constraints;
 
 internal class Program
 {
@@ -19,6 +20,10 @@ internal class Program
         builder.Services.AddAuthorization();
         builder.Services.AddAuthentication();
         builder.Services.AddControllers();
+        builder.Services.AddRouting(options =>
+        {
+            options.ConstraintMap.Add("salesReport", typeof(SalesReport));
+        });
 
         WebApplication app = builder.Build();
 
@@ -29,14 +34,68 @@ internal class Program
         app.UseHsts();
         app.UseHttpsRedirection();
         app.UseStaticFiles();
+        // + endpoint = null
+        app.Use(async (context, next) =>
+        {
+            Endpoint endpoint = context.GetEndpoint();
+            Console.WriteLine(endpoint);
+            await next(context);
+        });
         app.UseRouting();
         app.UseCors();
         app.UseAuthentication();
         app.UseAuthorization();
-        app.UseSession();
+        // app.UseSession();
         app.MapControllers();
 
         app.UseHeaders();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapGet("/get1", async (context) =>
+            {
+                await context.Response.WriteAsync("Map-get-1");
+            });
+
+            endpoints.MapGet("/files/{filename}.{extension}", async (context) =>
+            {
+                String? filename = (string?)context.Request.RouteValues["filename"];
+                String? extension = (string?)context.Request.RouteValues["extension"];
+                foreach (var item in context.Request.RouteValues)
+                {
+                    Console.WriteLine(item);
+                }
+                await context.Response.WriteAsync($"Requisição de files pela URL - {filename}.{extension}");
+            });
+
+            endpoints.MapGet("/programmers/{name=murilo}", async (context) =>
+            {
+                await context.Response.WriteAsync($"Programador: {context.Request.RouteValues["name"]}");
+            });
+
+
+            endpoints.MapGet("/product/{id:int?}", async (context) =>
+            {
+                await context.Response.WriteAsync($"Produto: {context.Request.RouteValues["id"]}");
+            });
+
+            // endpoints.MapGet(
+            //     "/sales-report/{year:int:min(1900)}/{month:regex(^(apr|jul|oct|jan)$)}",
+            //     async (context) =>
+            //     {
+            //         Int32 year = Convert.ToInt32(context.Request.RouteValues["year"]);
+            //         String? month = (string?)context.Request.RouteValues["month"];
+            //         await context.Response.WriteAsync($"Pesquisando vendas no ano de {year} mês {month}");
+            //     });
+            endpoints.MapGet(
+               "/sales-report/{year:int:min(1900)}/{month:salesReport}",
+               async (context) =>
+               {
+                   Int32 year = Convert.ToInt32(context.Request.RouteValues["year"]);
+                   String? month = (string?)context.Request.RouteValues["month"];
+                   await context.Response.WriteAsync($"Pesquisando vendas no ano de {year} mês {month}");
+               });
+        });
 
         app.Use(async (HttpContext context, RequestDelegate next) =>
         {
