@@ -1,5 +1,6 @@
 using Middlewares;
 using Constraints;
+using Microsoft.Extensions.FileProviders;
 
 internal class Program
 {
@@ -33,7 +34,12 @@ internal class Program
         app.UseExceptionHandler("/Error");
         app.UseHsts();
         app.UseHttpsRedirection();
-        app.UseStaticFiles();
+        app.UseStaticFiles(new StaticFileOptions()
+        {
+            FileProvider = new PhysicalFileProvider(
+                Path.Combine(builder.Environment.ContentRootPath, "www")
+            )
+        });
         // + endpoint = null
         app.Use(async (context, next) =>
         {
