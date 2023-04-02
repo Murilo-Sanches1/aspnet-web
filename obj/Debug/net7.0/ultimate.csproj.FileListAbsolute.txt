@@ -50,3 +50,4 @@ C:\programming\CS\ultimate\obj\Debug\net7.0\refint\ultimate.dll
 C:\programming\CS\ultimate\obj\Debug\net7.0\ultimate.pdb
 C:\programming\CS\ultimate\obj\Debug\net7.0\ultimate.genruntimeconfig.cache
 C:\programming\CS\ultimate\obj\Debug\net7.0\ref\ultimate.dll
+C:\programming\CS\ultimate\bin\Debug\net7.0\ultimate.staticwebassets.runtime.json

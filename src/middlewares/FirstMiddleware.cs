@@ -1,4 +1,4 @@
-namespace Middlewares
+namespace Ultimate.Middlewares
 {
     class FirstMiddleware : IMiddleware
     {

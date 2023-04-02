@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\programming\\CS\\ultimate\\wwwroot\\sample.jpg",
+      "PackagePath": "staticwebassets\\sample.jpg"
+    },
+    {
+      "Id": "C:\\programming\\CS\\ultimate\\wwwroot\\sample.pdf",
+      "PackagePath": "staticwebassets\\sample.pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.ultimate.props",
+      "PackagePath": "build\\ultimate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ultimate.props",
+      "PackagePath": "buildMultiTargeting\\ultimate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.ultimate.props",
+      "PackagePath": "buildTransitive\\ultimate.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.ultimate.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

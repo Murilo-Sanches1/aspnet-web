@@ -1,11 +1,54 @@
 {
   "Version": 1,
-  "Hash": "wtaEmsrlp9eR4LkkYTyto+Y5Fc2L3ON7Ve9k8a/0tTg=",
+  "Hash": "+ZXX8MlBwQQzzN+8IKX88ErX8pEX0yP1DFNzF5j6m8c=",
   "Source": "ultimate",
   "BasePath": "_content/ultimate",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "ultimate\\wwwroot",
+      "Source": "ultimate",
+      "ContentRoot": "C:\\programming\\CS\\ultimate\\wwwroot\\",
+      "BasePath": "_content/ultimate",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\programming\\CS\\ultimate\\wwwroot\\sample.jpg",
+      "SourceId": "ultimate",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\programming\\CS\\ultimate\\wwwroot\\",
+      "BasePath": "_content/ultimate",
+      "RelativePath": "sample.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sample.jpg"
+    },
+    {
+      "Identity": "C:\\programming\\CS\\ultimate\\wwwroot\\sample.pdf",
+      "SourceId": "ultimate",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\programming\\CS\\ultimate\\wwwroot\\",
+      "BasePath": "_content/ultimate",
+      "RelativePath": "sample.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\sample.pdf"
+    }
+  ]
 }
