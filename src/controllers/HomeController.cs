@@ -57,13 +57,22 @@ namespace Ultimate.Controllers
         [Route("/not")]
         public IActionResult Idk()
         {
-            return NotFound("Você não tem permissão para acessar essa rota protegida");
+            return NotFound("Não encontrado");
         }
 
         [Route("/bad")]
         public IActionResult Bad()
         {
-            return BadRequest("Você não tem permissão para acessar essa rota protegida");
+            return BadRequest("Requisição má formada");
+        }
+
+        [Route("/old")]
+        public IActionResult Redirect()
+        {
+            return RedirectToAction(
+                actionName: "NewUrl",
+                controllerName: "New",
+                routeValues: new { name = "Murilo" });
         }
 
         [Route("/about")]
