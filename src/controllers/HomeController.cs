@@ -123,5 +123,12 @@ namespace Ultimate.Controllers
             Console.WriteLine(book.ToString());
             return Content($"Produto - {book.BookId}");
         }
+
+        [Route("/sign-user")]
+        public IActionResult UserJson([FromForm] User user)
+        {
+
+            return Json("");
+        }
     }
 }
