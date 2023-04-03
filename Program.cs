@@ -5,6 +5,7 @@ internal class Program
         WebApplicationBuilder builder = WebApplication.CreateBuilder();
 
         builder.Services.AddControllers();
+        builder.Services.AddControllers().AddXmlSerializerFormatters();
 
         WebApplication app = builder.Build();
 
