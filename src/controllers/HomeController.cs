@@ -92,5 +92,36 @@ namespace Ultimate.Controllers
         {
             return $"Produto - {Request.RouteValues["id"]}";
         }
+
+        [Route("/product/{id?}")]
+        public string ProductModelBinding(int? id)
+        {
+            return $"Produto - {id}";
+        }
+
+        [Route("/book")]
+        public IActionResult Book([FromQuery] Book book)
+        {
+            if (!ModelState.IsValid)
+            {
+                // List<string> errList = new List<string>();
+                // foreach (var val in ModelState.Values)
+                // {
+                //     foreach (var err in val.Errors)
+                //     {
+                //         errList.Add(err.ErrorMessage);
+                //     }
+                // }
+                List<string> errList = ModelState.Values.SelectMany((val) =>
+                {
+                    return val.Errors;
+                }).Select((err) => err.ErrorMessage).ToList();
+
+                return BadRequest(string.Join("\n", errList));
+            }
+
+            Console.WriteLine(book.ToString());
+            return Content($"Produto - {book.BookId}");
+        }
     }
 }
