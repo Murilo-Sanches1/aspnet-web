@@ -14,6 +14,7 @@ namespace Ultimate.Models
         public int? Phone { get; set; }
         [BindNever]
         public string? Role { get; set; }
+        public List<string?> Grades { get; set; } = new List<string?>();
 
 
 
